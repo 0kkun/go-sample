@@ -1,11 +1,13 @@
 # ベースとなるDockerイメージ指定
 FROM golang:latest
 
+COPY src /go/src
+
 # コンテナ内に作業ディレクトリを作成
-RUN mkdir /go/src/work
+# RUN mkdir /go/src
 
 # コンテナログイン時のディレクトリ指定
-WORKDIR /go/src/work
+WORKDIR /go/src
 
 # ホストのファイルをコンテナの作業ディレクトリに移行
-ADD . /go/src/work
+# ADD . /go/src
